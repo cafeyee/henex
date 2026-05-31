@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,43 +7,43 @@
   <title>Cafe Yi | HENEX</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/global.css">
   <link rel="stylesheet" href="assets/css/pages.css">
   <script src="assets/js/main.js" defer></script>
 </head>
-<body>
+<body class="page-home">
   <a class="skip-link" href="#main-content">Skip to main content</a>
-
   <header class="site-header" data-site-header>
     <div class="container site-header__inner">
       <a class="site-brand" href="index.html" aria-label="Cafe Yi home">HENEX</a>
-
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
         <span class="nav-toggle__line"></span>
         <span class="nav-toggle__line"></span>
         <span class="nav-toggle__label">Menu</span>
       </button>
-
       <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-site-nav>
         <a href="about.html">About</a>
         <a href="philosophy.html">Philosophy</a>
         <a href="works.html">Works</a>
         <a href="lab.html">Lab</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+          <span class="theme-toggle__dot" aria-hidden="true"></span>
+          <span data-theme-label>Light</span>
+        </button>
         <a class="site-nav__cta" href="mailto:cafeyee@gmail.com">Contact</a>
       </nav>
     </div>
   </header>
-
   <main id="main-content">
-    <section class="home-hero" aria-labelledby="home-hero-title">
-      <div class="home-hero__visual" aria-hidden="true"></div>
-      <div class="container home-hero__content">
-        <p class="section-kicker section-kicker--light">Cross-disciplinary design and advisory</p>
+    <section class="home-hero page-hero page-hero--home" aria-labelledby="home-hero-title">
+      <div class="container page-hero__content home-hero__content">
+        <p class="section-kicker">Cross-disciplinary design and advisory</p>
         <h1 id="home-hero-title">Creating intuitive experiences across services, digital systems and built environments.</h1>
-        <p class="home-hero__lead">I use research, systems thinking and delivery experience to shape public-facing services, digital products and built environments through HENEX.</p>
+        <p class="lead home-hero__lead">I use research, systems thinking and delivery experience to shape public-facing services, digital products and built environments through HENEX.</p>
         <div class="button-row">
-          <a class="button button--light" href="#featured-works">View Works</a>
-          <a class="button button--light-outline" href="philosophy.html">Explore HENEX</a>
+          <a class="button button--hero-primary" href="works.html">View Works</a>
+          <a class="button button--hero-outline" href="philosophy.html">Explore HENEX</a>
         </div>
       </div>
     </section>
@@ -53,31 +53,10 @@
         <p class="section-kicker">01 · Capability</p>
         <h2 id="capability-title">Design, research and delivery, expressed as practical capability.</h2>
       </div>
-
       <div class="container capability-grid">
-        <article class="capability-card">
-          <span class="capability-card__index">01</span>
-          <div class="capability-card__text">
-            <h3>Public-facing design</h3>
-            <p>Make complex services, information and touchpoints easier for people to understand and use.</p>
-          </div>
-        </article>
-
-        <article class="capability-card">
-          <span class="capability-card__index">02</span>
-          <div class="capability-card__text">
-            <h3>Research-led decisions</h3>
-            <p>Use research, testing and data to guide design choices and reduce uncertainty.</p>
-          </div>
-        </article>
-
-        <article class="capability-card">
-          <span class="capability-card__index">03</span>
-          <div class="capability-card__text">
-            <h3>Complex delivery</h3>
-            <p>Coordinate people, constraints and systems so ideas can move from concept to implementation.</p>
-          </div>
-        </article>
+        <article class="capability-card"><span class="capability-card__index">01</span><div><h3>Public-facing design</h3><p>Make complex services, information and touchpoints easier for people to understand and use.</p></div></article>
+        <article class="capability-card"><span class="capability-card__index">02</span><div><h3>Research-led decisions</h3><p>Use research, testing and data to guide design choices and reduce uncertainty.</p></div></article>
+        <article class="capability-card"><span class="capability-card__index">03</span><div><h3>Complex delivery</h3><p>Coordinate people, constraints and systems so ideas can move from concept to implementation.</p></div></article>
       </div>
     </section>
 
@@ -86,184 +65,35 @@
         <p class="section-kicker">02 · HENEX framework</p>
         <h2 id="henex-title">HENEX creates experience through the interaction of Human, Emotion and Nature.</h2>
         <p class="lead">A practical framework for connecting service logic, emotional context and the digital or physical environments where people act.</p>
-        <div class="button-row">
-          <a class="button button--soft" href="philosophy.html">Explore the framework</a>
-        </div>
+        <div class="button-row"><a class="button button--soft" href="philosophy.html">Explore the framework</a></div>
       </div>
-
       <div class="container henex-dimension-grid">
-        <a class="dimension-card dimension-card--human" href="philosophy.html#human" aria-label="Explore the Human dimension in the HENEX framework">
-          <div class="dimension-card__icon" aria-hidden="true">
-            <img src="assets/icons/henex/dimension-human.svg" alt="" loading="lazy">
-          </div>
-          <div class="dimension-card__body">
-            <p class="dimension-card__label">Human</p>
-            <h3>How people understand, decide and act.</h3>
-            <div class="node-chip-row" aria-label="Human nodes">
-              <span>Identity</span>
-              <span>Perception</span>
-              <span>Agency</span>
-            </div>
-          </div>
-        </a>
-
-        <a class="dimension-card dimension-card--emotion" href="philosophy.html#emotion" aria-label="Explore the Emotion dimension in the HENEX framework">
-          <div class="dimension-card__icon" aria-hidden="true">
-            <img src="assets/icons/henex/dimension-emotion.svg" alt="" loading="lazy">
-          </div>
-          <div class="dimension-card__body">
-            <p class="dimension-card__label">Emotion</p>
-            <h3>How experience carries feeling and meaning.</h3>
-            <div class="node-chip-row" aria-label="Emotion nodes">
-              <span>Affect</span>
-              <span>Empathy</span>
-              <span>Meaning</span>
-            </div>
-          </div>
-        </a>
-
-        <a class="dimension-card dimension-card--nature" href="philosophy.html#nature" aria-label="Explore the Nature dimension in the HENEX framework">
-          <div class="dimension-card__icon" aria-hidden="true">
-            <img src="assets/icons/henex/dimension-nature.svg" alt="" loading="lazy">
-          </div>
-          <div class="dimension-card__body">
-            <p class="dimension-card__label">Nature</p>
-            <h3>How context, matter and interface shape interaction.</h3>
-            <div class="node-chip-row" aria-label="Nature nodes">
-              <span>Medium</span>
-              <span>Matter</span>
-              <span>Interface</span>
-            </div>
-          </div>
-        </a>
+        <a class="dimension-card dimension-card--human" href="philosophy.html#human"><div class="dimension-card__icon"><img src="assets/icons/henex/dimension-human.svg" alt="" loading="lazy"></div><div class="dimension-card__body"><p class="dimension-card__label">Human</p><h3>How people understand, decide and act.</h3><div class="node-chip-row"><span>Identity</span><span>Perception</span><span>Agency</span></div></div></a>
+        <a class="dimension-card dimension-card--emotion" href="philosophy.html#emotion"><div class="dimension-card__icon"><img src="assets/icons/henex/dimension-emotion.svg" alt="" loading="lazy"></div><div class="dimension-card__body"><p class="dimension-card__label">Emotion</p><h3>How experience carries feeling and meaning.</h3><div class="node-chip-row"><span>Affect</span><span>Empathy</span><span>Meaning</span></div></div></a>
+        <a class="dimension-card dimension-card--nature" href="philosophy.html#nature"><div class="dimension-card__icon"><img src="assets/icons/henex/dimension-nature.svg" alt="" loading="lazy"></div><div class="dimension-card__body"><p class="dimension-card__label">Nature</p><h3>How context, matter and interface shape interaction.</h3><div class="node-chip-row"><span>Medium</span><span>Matter</span><span>Interface</span></div></div></a>
       </div>
     </section>
 
     <section class="section-pad" id="featured-works" aria-labelledby="featured-works-title">
-      <div class="container section-header section-header--spacious">
-        <p class="section-kicker">03 · Featured Works</p>
-        <h2 id="featured-works-title">Selected work across service, digital and spatial systems.</h2>
-      </div>
-
+      <div class="container section-header section-header--spacious"><p class="section-kicker">03 · Featured Works</p><h2 id="featured-works-title">Selected work across service, digital and spatial systems.</h2></div>
       <div class="container works-layout">
-        <article class="project-card project-card--lead">
-          <a class="project-card__media project-card__media--cover" href="works/victim-hub.html" aria-label="View Victim Hub case study">
-            <img src="assets/img/projects/vth/vth-home.webp" alt="Victim Hub project preview" loading="lazy">
-          </a>
-          <div class="project-card__body">
-            <p class="project-card__meta">Featured Work · Service Systems</p>
-            <h3><a href="works/victim-hub.html">Victim Hub</a></h3>
-            <p>A public sector service improvement case using information architecture, comparative usability testing and focused iteration.</p>
-            <div class="tag-row" aria-label="Victim Hub tags">
-              <span class="tag">Public Sector</span>
-              <span class="tag">Information Architecture</span>
-              <span class="tag"><span class="tag-dot tag-dot--human"></span>Agency</span>
-              <span class="tag"><span class="tag-dot tag-dot--emotion"></span>Empathy</span>
-            </div>
-          </div>
-        </article>
-
-        <div class="work-group">
-          <div class="work-group__header">
-            <p class="mini-section-title">Service and Digital</p>
-          </div>
-          <div class="project-grid project-grid--three">
-            <article class="project-card project-card--compact">
-              <a class="project-card__media project-card__media--cover" href="works/accessibility-support-hub.html" aria-label="View Accessibility Support Hub case study">
-                <img src="assets/img/projects/ash/ash-home.webp" alt="Accessibility Support Hub project preview" loading="lazy">
-              </a>
-              <div class="project-card__body">
-                <p class="project-card__meta">Accessibility · Service Systems</p>
-                <h3><a href="works/accessibility-support-hub.html">Accessibility Support Hub</a></h3>
-              </div>
-            </article>
-
-            <article class="project-card project-card--compact">
-              <a class="project-card__media project-card__media--cover" href="works/studier.html" aria-label="View Studier case study">
-                <img src="assets/img/projects/std/std-home.webp" alt="Studier dashboard project preview" loading="lazy">
-              </a>
-              <div class="project-card__body">
-                <p class="project-card__meta">Product Design · Dashboard</p>
-                <h3><a href="works/studier.html">Studier</a></h3>
-              </div>
-            </article>
-
-            <article class="project-card project-card--compact">
-              <a class="project-card__media project-card__media--cover" href="works/new-world-design-system.html" aria-label="View New World Design System case study">
-                <img src="assets/img/projects/nds/nds-home.webp" alt="New World Design System project preview" loading="lazy">
-              </a>
-              <div class="project-card__body">
-                <p class="project-card__meta">Design System · Digital Systems</p>
-                <h3><a href="works/new-world-design-system.html">New World Design System</a></h3>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <div class="work-group">
-          <div class="work-group__header">
-            <p class="mini-section-title">Spatial Systems</p>
-          </div>
-          <div class="project-grid project-grid--two">
-            <article class="project-card project-card--compact">
-              <a class="project-card__media project-card__media--cover" href="works/guangzhou-baiyun-t2.html" aria-label="View Guangzhou Baiyun T2 case study">
-                <img src="assets/img/projects/bt2/bt2-home.webp" alt="Guangzhou Baiyun International Airport Terminal 2 project preview" loading="lazy">
-              </a>
-              <div class="project-card__body">
-                <p class="project-card__meta">Transport Architecture · Complex Delivery</p>
-                <h3><a href="works/guangzhou-baiyun-t2.html">Guangzhou Baiyun T2</a></h3>
-              </div>
-            </article>
-
-            <article class="project-card project-card--compact">
-              <a class="project-card__media project-card__media--cover" href="works/shantou-ayg.html" aria-label="View Shantou University and AYG Venue case study">
-                <img src="assets/img/projects/ayg/ayg-home.webp" alt="Shantou University and Asian Youth Games Venue project preview" loading="lazy">
-              </a>
-              <div class="project-card__body">
-                <p class="project-card__meta">Campus Planning · Sports Venue</p>
-                <h3><a href="works/shantou-ayg.html">Shantou University and AYG Venue</a></h3>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <div class="section-cta">
-          <a class="button button--primary" href="works.html">View all Works</a>
-        </div>
+        <article class="project-card project-card--lead"><a class="project-card__media project-card__media--cover" href="works/victim-hub.html"><img src="assets/img/projects/vth/vth-home.webp" alt="Victim Hub project preview" loading="lazy"></a><div class="project-card__body"><p class="project-card__meta">Featured Work · Service Systems</p><h3><a href="works/victim-hub.html">Victim Hub</a></h3><p>A public sector service improvement case using information architecture, comparative usability testing and focused iteration.</p><div class="tag-row"><span class="tag">Public Sector</span><span class="tag">Information Architecture</span><span class="tag"><span class="tag-dot tag-dot--human"></span>Agency</span><span class="tag"><span class="tag-dot tag-dot--emotion"></span>Empathy</span></div></div></article>
+        <div class="work-group"><p class="mini-section-title">Service and Digital</p><div class="project-grid project-grid--three">
+          <article class="project-card project-card--compact"><a class="project-card__media project-card__media--cover" href="works/accessibility-support-hub.html"><img src="assets/img/projects/ash/ash-home.webp" alt="Accessibility Support Hub project preview" loading="lazy"></a><div class="project-card__body"><p class="project-card__meta">Accessibility · Service Systems</p><h3><a href="works/accessibility-support-hub.html">Accessibility Support Hub</a></h3></div></article>
+          <article class="project-card project-card--compact"><a class="project-card__media project-card__media--cover" href="works/studier.html"><img src="assets/img/projects/std/std-home.webp" alt="Studier dashboard project preview" loading="lazy"></a><div class="project-card__body"><p class="project-card__meta">Product Design · Dashboard</p><h3><a href="works/studier.html">Studier</a></h3></div></article>
+          <article class="project-card project-card--compact"><a class="project-card__media project-card__media--cover" href="works/new-world-design-system.html"><img src="assets/img/projects/nds/nds-home.webp" alt="New World Design System project preview" loading="lazy"></a><div class="project-card__body"><p class="project-card__meta">Design System · Digital Systems</p><h3><a href="works/new-world-design-system.html">New World Design System</a></h3></div></article>
+        </div></div>
+        <div class="work-group"><p class="mini-section-title">Spatial Systems</p><div class="project-grid project-grid--two">
+          <article class="project-card project-card--compact"><a class="project-card__media project-card__media--cover" href="works/guangzhou-baiyun-t2.html"><img src="assets/img/projects/bt2/bt2-home.webp" alt="Guangzhou Baiyun International Airport Terminal 2 project preview" loading="lazy"></a><div class="project-card__body"><p class="project-card__meta">Transport Architecture · Complex Delivery</p><h3><a href="works/guangzhou-baiyun-t2.html">Guangzhou Baiyun T2</a></h3></div></article>
+          <article class="project-card project-card--compact"><a class="project-card__media project-card__media--cover" href="works/shantou-ayg.html"><img src="assets/img/projects/ayg/ayg-home.webp" alt="Shantou University and Asian Youth Games Venue project preview" loading="lazy"></a><div class="project-card__body"><p class="project-card__meta">Campus Planning · Sports Venue</p><h3><a href="works/shantou-ayg.html">Shantou University and AYG Venue</a></h3></div></article>
+        </div></div>
+        <div class="section-cta"><a class="button button--primary" href="works.html">View all Works</a></div>
       </div>
     </section>
 
-    <section class="section-pad about-preview-section" aria-labelledby="about-preview-title">
-      <div class="container about-preview">
-        <div class="about-preview__heading">
-          <p class="section-kicker">04 · About</p>
-          <h2 id="about-preview-title">From built environments to public services.</h2>
-        </div>
-        <div class="about-preview__body">
-          <p class="lead">My work has moved from large-scale architectural delivery into UX, service design and evidence-informed public sector work, with a focus on making complex systems easier to use and deliver.</p>
-          <div class="button-row">
-            <a class="button button--primary" href="about.html">Read About</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-pad lab-entry-section" aria-labelledby="lab-entry-title">
-      <div class="container lab-entry">
-        <div>
-          <p class="section-kicker">05 · Lab</p>
-          <h2 id="lab-entry-title">A space for visual experiments, artistic studies and creative ideas.</h2>
-        </div>
-        <div class="lab-entry__body">
-          <p class="lead">Lab collects open-ended visual exploration, photography, sketches, small creative tools and future interaction studies beyond formal case studies.</p>
-          <div class="button-row">
-            <a class="button button--soft" href="lab.html">Visit Lab</a>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section class="section-pad about-preview-section" aria-labelledby="about-preview-title"><div class="container about-preview"><div><p class="section-kicker">04 · About</p><h2 id="about-preview-title">From built environments to public services.</h2></div><div class="about-preview__body"><p class="lead">My work has moved from large-scale architectural delivery into UX, service design and evidence-informed public sector work, with a focus on making complex systems easier to use and deliver.</p><div class="button-row"><a class="button button--primary" href="about.html">Read About</a></div></div></div></section>
+    <section class="section-pad lab-entry-section" aria-labelledby="lab-entry-title"><div class="container lab-entry"><div><p class="section-kicker">05 · Lab</p><h2 id="lab-entry-title">A space for visual experiments, artistic studies and creative ideas.</h2></div><div class="lab-entry__body"><p class="lead">Lab collects open-ended visual exploration, photography, sketches, small creative tools and future interaction studies beyond formal case studies.</p><div class="button-row"><a class="button button--soft" href="lab.html">Visit Lab</a></div></div></div></section>
   </main>
-
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-intro">
@@ -271,13 +101,11 @@
         <p>Creating evidence-informed design work across public services, digital systems and built environments.</p>
         <a class="button button--footer" href="mailto:cafeyee@gmail.com">Contact</a>
       </div>
-
       <div class="footer-column">
         <h3>Social</h3>
         <a href="https://www.linkedin.com/in/cafeyi">LinkedIn</a>
         <a href="https://www.instagram.com/cafe.yi_photo/">Instagram</a>
       </div>
-
       <div class="footer-column">
         <h3>Explore</h3>
         <a href="about.html">About</a>
