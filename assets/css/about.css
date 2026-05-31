@@ -1,4 +1,5 @@
-/* HENEX About CSS v1.0 */
+/* HENEX About CSS v1.1
+   Scope: About page hero, portrait theme variants, evidence, practice, capability and marker sections. */
 .page-about {
   --page-accent: var(--color-human);
   --page-accent-border: rgba(60, 140, 244, 0.24);
@@ -47,12 +48,23 @@
   display: grid;
   place-items: center;
 }
-.about-portrait img {
+.about-portrait__img {
+  grid-area: 1 / 1;
   width: 100%;
   aspect-ratio: 1 / 1;
   display: block;
   object-fit: contain;
   filter: drop-shadow(0 26px 40px rgba(60, 140, 244, 0.18));
+}
+.about-portrait__img--dark {
+  display: none;
+}
+[data-theme="dark"] .about-portrait__img--light {
+  display: none;
+}
+[data-theme="dark"] .about-portrait__img--dark {
+  display: block;
+  filter: drop-shadow(0 26px 44px rgba(60, 140, 244, 0.28));
 }
 .evidence-section {
   padding-block: 72px 32px;
@@ -154,6 +166,14 @@
 .about-icon-badge img {
   width: 23px;
   height: 23px;
+}
+[data-theme="dark"] .about-icon-badge {
+  border: 1px solid rgba(60, 140, 244, 0.28);
+  background: rgba(60, 140, 244, 0.22);
+}
+[data-theme="dark"] .about-icon-badge img {
+  filter: invert(1);
+  opacity: 0.92;
 }
 .about-foundation-card {
   min-height: 330px;
