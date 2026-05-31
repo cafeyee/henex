@@ -1,5 +1,5 @@
-/* HENEX Global CSS v1.2
-   Scope: design tokens, light/dark theme, base reset, global navigation, buttons, footer and responsive menu. */
+/* HENEX Global CSS v1.6
+   Scope: design tokens, light/dark theme, base reset, global navigation, buttons, footer, Back to Top and responsive menu. */
 
 :root {
   --font-heading: "IBM Plex Sans", sans-serif;
@@ -36,6 +36,7 @@
   --hero-button-bg: #FFFFFF;
   --hero-button-text: #111827;
   --hero-button-border: rgba(17, 24, 39, 0.28);
+  --footer-bg: #151719;
 
   --page-accent: var(--color-brand-primary);
   --page-accent-border: rgba(17, 24, 39, 0.18);
@@ -73,6 +74,7 @@
   --hero-button-bg: #FFFFFF;
   --hero-button-text: #111827;
   --hero-button-border: rgba(255, 255, 255, 0.38);
+  --footer-bg: #181A1D;
 
   --page-nav-card-bg: var(--theme-card);
   --page-nav-card-border: var(--theme-border);
@@ -292,11 +294,14 @@ p {
 }
 
 .theme-toggle {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
   min-height: 38px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0 13px;
+  display: inline-grid;
+  place-items: center;
+  padding: 0;
+  gap: 0;
   border: 1px solid var(--theme-border);
   border-radius: 999px;
   background: var(--theme-surface);
@@ -314,12 +319,27 @@ p {
   border-color: color-mix(in srgb, var(--theme-text) 28%, var(--theme-border));
 }
 
-.theme-toggle__dot {
-  width: 10px;
-  height: 10px;
-  display: inline-block;
-  border-radius: 999px;
-  background: currentColor;
+.theme-icon {
+  width: 20px;
+  height: 20px;
+  display: none;
+  pointer-events: none;
+}
+[data-theme="light"] .theme-icon--sun,
+[data-theme="dark"] .theme-icon--moon {
+  display: block;
+}
+[data-theme="dark"] .theme-icon,
+[data-theme="dark"] .back-to-top img {
+  filter: invert(1);
+}
+[data-theme="light"] .theme-icon,
+[data-theme="light"] .back-to-top img {
+  filter: none;
+}
+.theme-toggle__dot,
+.theme-toggle [data-theme-label] {
+  display: none;
 }
 
 .nav-toggle {
@@ -420,13 +440,14 @@ body.nav-open .nav-toggle__line:nth-child(2) {
 
 .button--footer {
   background: #FFFFFF;
-  color: #090A0B;
+  color: #151719;
   border-color: #FFFFFF;
 }
 
 .site-footer {
   padding: 76px 0 34px;
-  background: #090A0B;
+  background: var(--footer-bg);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   color: #FFFFFF;
 }
 
@@ -470,6 +491,50 @@ body.nav-open .nav-toggle__line:nth-child(2) {
   color: rgba(255, 255, 255, 0.72);
 }
 
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 70;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--theme-border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--theme-surface) 94%, transparent);
+  color: var(--theme-text);
+  box-shadow: var(--theme-shadow-card);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 180ms ease, visibility 180ms ease, transform 180ms ease, border-color 180ms ease;
+}
+.back-to-top img {
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  border-color: color-mix(in srgb, var(--theme-text) 28%, var(--theme-border));
+  transform: translateY(-2px);
+}
+.page-hero {
+  width: 100%;
+  margin-inline: 0 !important;
+}
+.page-hero > .container,
+.page-hero .page-hero__content {
+  width: min(var(--container), calc(100% - var(--gutter)));
+  margin-inline: auto;
+}
 @media (max-width: 900px) {
   :root {
     --gutter: 32px;
@@ -534,8 +599,7 @@ body.nav-open .nav-toggle__line:nth-child(2) {
     transform: translateX(0);
   }
 
-  .site-nav a,
-  .site-nav .theme-toggle {
+  .site-nav a {
     width: fit-content;
     max-width: 100%;
   }
@@ -549,10 +613,24 @@ body.nav-open .nav-toggle__line:nth-child(2) {
     letter-spacing: 0;
   }
 
+  .site-nav .theme-toggle,
   .theme-toggle {
-    min-height: 46px;
-    padding: 0 16px;
-    font-size: 1rem;
+    width: 52px;
+    height: 52px;
+    max-width: 52px;
+    min-width: 52px;
+    min-height: 52px;
+    padding: 0;
+    margin-top: 10px;
+    flex: 0 0 auto;
+  }
+  .theme-icon {
+    width: 25px;
+    height: 25px;
+  }
+  .back-to-top {
+    right: 18px;
+    bottom: 18px;
   }
 
   .footer-grid {
